@@ -14,7 +14,7 @@ export default function Nav() {
         />
         <title>Gamecyclopedia</title>
       </Head>
-      <nav className="w-full h-[60px] flex items-center sm:justify-evenly bg-amber-400 justify-around">
+      <nav className="w-full h-[60px] flex items-center sm:justify-evenly bg-amber-400 justify-around fixed top-0">
         <div className="logo">
           <Link href="/">
             <Image
