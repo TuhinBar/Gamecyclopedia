@@ -31,7 +31,7 @@ export default function Nav() {
         </div>
         <div className="flex items-center justify-center gap-8">
           <Link href="/" className="hover:bg-stale-300">Upcoming</Link>
-          <Link href="/about">Hall Of Fame</Link>
+          <Link href="/fame">Hall Of Fame</Link>
         </div>
       </nav>
     </>
