@@ -1,17 +1,36 @@
 import Head from 'next/head';
+import Nav from '@/components/Nav';
+import List from '@/components/List';
+import {APIResponse} from '@/types/Response';
 
-const Fame = () => {
+const Fame: React.FC<APIResponse> = ({games}) => {
     return (
         <>
         <Head>
             <title>Gamecyclopedia | Hall Of Fame</title>
         </Head>
-        <div className="w-full h-screen bg-amber-400 flex flex-col items-center justify-center">
-            <h1 className="text-4xl font-bold text-white">Hall Of Fame</h1>
-            <p className="text-2xl text-white">Coming Soon</p>
-        </div>
+      <Nav />
+      <List games={games} />
         </>
     );
     };
 
 export default Fame;
+
+export async function getStaticProps() {
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': process.env.NEXT_PUBLIC_RAPID_KEY?process.env.NEXT_PUBLIC_RAPID_KEY:"",
+            'X-RapidAPI-Host': 'opencritic-api.p.rapidapi.com'
+        }
+    };
+    const res = await fetch('https://opencritic-api.p.rapidapi.com/game/hall-of-fame',options);
+    const data = await res.json();
+
+    return {
+        props: {
+            games: data
+        }
+    };
+}

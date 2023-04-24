@@ -13,7 +13,7 @@ const List: React.FC<ListResponse> = ({games}) => {
             
                 {games.map((game) => (
                   <Suspense key={game.id}>
-                    <Card className="sm:w-[60%] w-[90%] cursor-pointer  border-4 border-cyan-500 border-dash bg-gradient-to-r from-amber-500 to-cyan-800" >
+                    <Card className="sm:w-[60%] w-[90%] cursor-pointer  border-4 border-cyan-500 border-dash bg-gradient-to-r from-amber-500 to-amber-300" >
                         <div className="w-full px-8 flex items-center justify-start">
                             <Image className="rounded-md" src={`https://img.opencritic.com/${game.images.box.og}`} width={60} height={60} alt={game.name} />
                             <div className="mx-4">
