@@ -15,7 +15,7 @@ jobs:
 
       - name: Merge dev into main
         run: |
-          git checkout main
+          git checkout dev2
           git merge --no-ff ${{ github.ref }}
 
       - name: Push changes
